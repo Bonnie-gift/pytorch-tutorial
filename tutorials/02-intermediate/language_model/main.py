@@ -69,6 +69,7 @@ for epoch in range(num_epochs):
         # Get mini-batch inputs and targets
         inputs = ids[:, i:i+seq_length].to(device)
         targets = ids[:, (i+1):(i+1)+seq_length].to(device)
+        print('input size', inputs.size())
         
         # Forward pass
         states = detach(states)

@@ -71,7 +71,10 @@ for epoch in range(num_epochs):
         targets = ids[:, (i+1):(i+1)+seq_length].to(device)
         print('input size', inputs.size())
         print('reshape size', targets.size())
-        
+        #input size torch.Size([20, 30])
+        #reshape size torch.Size([20, 30])
+        #output size torch.Size([600, 10000])
+        #reshape torch.Size([600])
         # Forward pass
         states = detach(states)
         outputs, states = model(inputs, states)

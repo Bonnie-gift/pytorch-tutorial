@@ -70,10 +70,13 @@ for epoch in range(num_epochs):
         inputs = ids[:, i:i+seq_length].to(device)
         targets = ids[:, (i+1):(i+1)+seq_length].to(device)
         print('input size', inputs.size())
+        print('reshape size', targets.size())
         
         # Forward pass
         states = detach(states)
         outputs, states = model(inputs, states)
+        print('output size', outputs.size())
+        print('reshape',targets.reshape(-1).size())
         loss = criterion(outputs, targets.reshape(-1))
         
         # Backward and optimize

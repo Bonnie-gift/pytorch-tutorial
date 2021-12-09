@@ -8,6 +8,7 @@ class Dictionary(object):
         self.idx2word = {}
         self.idx = 0
     
+    #完成词和index之间的一个映射
     def add_word(self, word):
         if not word in self.word2idx:
             self.word2idx[word] = self.idx
